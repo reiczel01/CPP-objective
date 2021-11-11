@@ -1,49 +1,44 @@
-#include <iostream>
 #include "rodo.h"
- using namespace std;
+#include "users.h"
+#include <iostream>
+using namespace std;
 
-int main()
-{
-  int size, operation;
+int main() {
+  int operation;
   operation = 0;
+  Users userData;
 
-  cout << "Podaj rozmiar tablicy:" << endl;
-  cin >> size;
-int* tab;
-tab = new (int)personalData [size];
+  while (operation != 5) {
+    cout << "Co chcesz zrobić" << endl;
+    cout << "1 - Dodaj dane osobowe" << endl
+         << "2 - Edytuj dane osobowe" << endl
+         << "3 - Usuń dane osobowe" << endl
+         << "4 - Wyswietl dane" << endl
+         << "5 - Zakończ program" << endl
+         << ": ";
+    cin >> operation;
+    switch (operation) {
+    default:
+      cout << "Podana niewłaciwa operacja!!!";
+    case 1:
+      userData.constructAndAddUser();
+      break;
 
-  while(operation != 4)
-  {
-  cout << "Co chcesz zrobić" << endl;
-  cout << "1 - Dodaj dane osobowe" << endl
-       << "2 - Edytuj dane osobowe" << endl
-       << "3 - Usuń dane osobowe" << endl
-       << "4 - Zakończ program" << endl
-       << ": " << endl;
-  cin >> operation;
-  switch(operation)
-    {
-      case 1:
-        for(int i = 0; i <= size; i++)
-        {
-          personalData tablica();
-          personalData create();
-        }
-        break;
+    case 2:
+      userData.findAndEditUser();
+      break;
 
-      case 2:
-        personalData edit;
-        break;
+    case 3:
+      userData.delAndFindUser();
+      break;
 
-      case 3:
-        personalData delete();
-        break;
+    case 4:
+      userData.displayData();
+      break;
 
-      case 4:
-        delete [] tablica;
-        return 0;
-        break;
-
+    case 5:
+      return 0;
+      break;
     }
   }
 }
