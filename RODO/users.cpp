@@ -74,7 +74,7 @@ void Users ::findAndEditUser() {
 
 void Users ::delAndFindUser() {
   long int personalIdNumber = 0;
-  cout << "Podaj numer pedel osoby do edycji: ";
+  cout << "Podaj numer pedel osoby do usunięcia: ";
   while (1) {
     if (readUserNumericData(personalIdNumber) == true) {
       break;
