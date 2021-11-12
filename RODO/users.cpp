@@ -79,14 +79,14 @@ void Users ::delAndFindUser() {
     if (readUserNumericData(personalIdNumber) == true) {
       break;
     }
-    for (int i = 0; i < usersContainer.size(); i++) {
+  }
+  for (int i = 0; i < usersContainer.size(); i++) {
       if (usersContainer[i]->getPersonalIdNumber() == personalIdNumber) {
         delete usersContainer[i];
         usersContainer.erase(usersContainer.begin() + i);
         break;
       }
     }
-  }
 }
 
 void Users ::displayData() {
