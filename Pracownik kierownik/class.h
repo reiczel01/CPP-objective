@@ -42,4 +42,21 @@ class Date{
     }
 };
 
+class TempData
+{
+public:
+std::string name;
+std::string lastName;
+long int nip;
+Date date;
+float salary;
+std::string department;
+int countOfWorkers;
+std::string typeOfMenagment;
+float aditionsToSalary;
+
+TempData(){};
+
+};
+
 #endif

@@ -9,67 +9,98 @@ using namespace std;
 int main(){
 
     int tempAction = 0;
-    Worker temp("tom", "don", 243756756, {12,3,2011}, 3122456, "development");
+    int checkOfInput = 0;
+    
 
-    Boss tempB("tom", "don", 243756756, {12,3,2011}, 3122456, "development", 100, "d", 15);
+    
 
-    os1.printData();
-    bos1.printData();
+    TempData tempData;
 
     std::cout << "Kogo chcesz dodać Pracownika - 1 czy Kierownika - 2: ";
-
-    switch(tempAction)
+    while (checkOfInput != 0) 
     {
-        case 1:
-        std::cout << "Imie: ";
-        std::cin >> temp.name;
+    switch(tempAction)
+        {
+            case 1:
+            std::cout << "Imie: ";
+            std::cin >> tempData.name;
 
-        std::cout << "Nazwisko: ";
-        std::cin >> temp.lastName;
+            std::cout << "Nazwisko: ";
+            std::cin >> tempData.lastName;
 
-        std::cout << "NIP: ";
-        std::cin >> temp.nip;
+            std::cout << "NIP: ";
+            std::cin >> tempData.nip;
 
-        std::cout << "Data utworzenia: ";
-        std::cin >> temp.date;
+            std::cout << "Data utworzenia: " << std::endl;
+            std::cout << "Dzień: ";
+            std::cin >> tempData.date.setDay();
+            std::cout << "Miesiąc: ";
+            std::cin >> tempData.date.setMonth();
+            std::cout << "Rok: ";
+            std::cin >> tempData.date.setYear();
 
-        std::cout << "Płaca: ";
-        std::cin >> temp.salary;
+            std::cout << "Płaca: ";
+            std::cin >> tempData.salary;
 
-        std::cout << "Dział: ";
-        std::cin >> temp.department;
+            std::cout << "Dział: ";
+            std::cin >> tempData.department;
+            
+            Worker worker(tempData.name, tempData.lastName, tempData.nip, {tempData.date.getDay(),tempData.date.getMonth(),tempData.date.getYear()}, 
+            tempData.salary, tempData.department);
 
-        break;
+            worker.printData();
+            checkOfInput = 1;
+            break;
 
-        case 2:
-        std::cout << "Imie: ";
-        std::cin >> tempB.name;
+            case 2:
+            std::cout << "Imie: ";
+            std::cin >> tempData.name;
 
-        std::cout << "Nazwisko: ";
-        std::cin >> tempB.lastName;
+            std::cout << "Nazwisko: ";
+            std::cin >> tempData.lastName;
 
-        std::cout << "NIP: ";
-        std::cin >> tempB.nip;
+            std::cout << "NIP: ";
+            std::cin >> tempData.nip;
 
-        std::cout << "Data utworzenia: ";
-        std::cin >> tempB.date;
+            std::cout << "Data utworzenia: " << std::endl;
+            std::cout << "Dzień: ";
+            std::cin >> tempData.date.setDay();
+            std::cout << "Miesiąc: ";
+            std::cin >> tempData.date.setMonth();
+            std::cout << "Rok: ";
+            std::cin >> tempData.date.setYear();
 
-        std::cout << "Płaca: ";
-        std::cin >> tempB.salary;
+            std::cout << "Płaca: ";
+            std::cin >> tempData.salary;
 
-        std::cout << "Dział: ";
-        std::cin >> tempB.department;
+            std::cout << "Dział: ";
+            std::cin >> tempData.department;
 
-        std::cout << "Ilość pracowników: ";
-        std::cin >> tempB.countOfWorkers;
+            std::cout << "Ilość pracowników: ";
+            std::cin >> tempData.countOfWorkers;
 
-        std::cout << "Typ kierownictwa: ";
-        std::cin >> tempB.typeOfMenagment;
+            std::cout << "Typ kierownictwa: ";
+            std::cin >> tempData.typeOfMenagment;
 
-        std::cout << "Dodatek funkcyjny: ";
-        std::cin >> tempB.aditionsToSalary;
-        
+            std::cout << "Dodatek funkcyjny: ";
+            std::cin >> tempData.aditionsToSalary;
 
+            Boss boss(tempData.name, tempData.lastName, tempData.nip, {tempData.date.getDay(),tempData.date.getMonth(),tempData.date.getYear()}, 
+            tempData.salary, tempData.department, tempData.countOfWorkers, tempData.typeOfMenagment, tempData.aditionsToSalary);
+            
+            boss.printData();
+            checkOfInput = 1;
+            break;
+
+            default:
+
+            std::cout << "Wybrałeś nieprawidłową opcję";
+            checkOfInput = 0;
+            break;
+        }
+
+    }
+    
 
     }
 
