@@ -7,7 +7,7 @@
 #include "worker.h"
 
 class Boss: public Worker{
-private:
+protected:
 int countOfWorkers;
 std::string typeOfMenagment;
 float aditionsToSalary;

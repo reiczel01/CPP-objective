@@ -3,7 +3,7 @@
 
 
 #include <iostream>
-//to jest test
+
 
 //Pracownik oraz Kierownik. Klasa Pracownik powinna posiadać pola: imię, nazwisko, nip, data zatrudnienia, pensja, dział. Klasa Kierownik powinna dziedziczyć po klasie Pracownik oraz posiadać pola: ilość podwładnych, typ kierownictwa, dodatek funkcyjny (wyrażony w procentach)
 
@@ -41,8 +41,5 @@ class Date{
         std::cout << getDay() << ":" << getMonth() << ":" << getYear() << std::endl;
     }
 };
-
-
-
 
 #endif
